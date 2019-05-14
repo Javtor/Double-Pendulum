@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainView">
+   <center>
+      <Canvas fx:id="canvas" height="300.0" width="400.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane alignment="CENTER" prefHeight="100.0" prefWidth="318.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXButton fx:id="btnF" onAction="#f" text="F" />
+                  <JFXButton fx:id="btnFPrime" onAction="#fPrime" text="F'" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="btnR" onAction="#r" text="R" GridPane.columnIndex="1" />
+                  <JFXButton fx:id="btnRPrime" onAction="#rPrime" text="R'" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="btnU" onAction="#u" text="U" GridPane.columnIndex="2" />
+                  <JFXButton fx:id="btnUPrime" onAction="#uPrime" text="U'" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="btnL" onAction="#l" text="L" GridPane.columnIndex="3" />
+                  <JFXButton fx:id="btnLPrime" onAction="#lPrime" text="L'" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="btnB" onAction="#b" text="B" GridPane.columnIndex="4" />
+                  <JFXButton fx:id="btnBPrime" onAction="#bPrime" text="B'" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="btnD" onAction="#d" text="D" GridPane.columnIndex="5" />
+                  <JFXButton fx:id="btnDPrime" onAction="#dPrime" text="D'" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <JFXButton fx:id="btnShuffle" buttonType="RAISED" onAction="#shuffle" prefHeight="50.0" prefWidth="82.0" text="SHUFFLE" />
+            <JFXButton fx:id="btnReset" onAction="#reset" text="RESET" />
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <JFXTextArea fx:id="txtMoves" editable="false" prefHeight="62.0" prefWidth="640.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>

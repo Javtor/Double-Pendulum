@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainView">
+   <center>
+      <Canvas fx:id="canvas" height="324.0" width="441.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Mass (kg)" />
+            <Label text="Gravity (m/s^2)" GridPane.rowIndex="1" />
+            <Label text="Length (m)" GridPane.rowIndex="2" />
+            <TextField fx:id="txtMass" GridPane.columnIndex="1" />
+            <TextField fx:id="txtGravity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtLength" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtAngle" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Angle (°)" GridPane.rowIndex="3" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+               <children>
+                  <Button fx:id="btnStart" mnemonicParsing="false" onAction="#start" text="Start" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Button fx:id="btnStop" mnemonicParsing="false" onAction="#stop" text="Stop" />
+               </children>
+            </HBox>
+            <Label text="Friction" GridPane.rowIndex="4" />
+            <TextField fx:id="txtFriction" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtVelocity" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Velocity (°/s)" GridPane.rowIndex="5" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </right>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</BorderPane>
