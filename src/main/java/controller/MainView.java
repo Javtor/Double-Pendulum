@@ -100,7 +100,7 @@ public class MainView {
     	rawY *= height/pendulum.getL();
     	
     	rawX += width;
-    	rawY += height;
+//    	rawY += height;
     	
     	double x = rawX - PEND_W/2;
     	double y = rawY - PEND_H/2;

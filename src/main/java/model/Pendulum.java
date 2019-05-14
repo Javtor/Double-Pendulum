@@ -50,7 +50,7 @@ public class Pendulum {
 	public void step(double dt) {
 		theta += dTheta*dt;
 		dTheta += (-(g/L)*Math.sin(theta)-k*dTheta)*dt;
-//		dTheta += (-(g/L)*theta-k*dTheta)*dt;
+
 	}
 	
 	public double getX() {
@@ -58,7 +58,8 @@ public class Pendulum {
 	}
 	
 	public double getY() {
-		return L*(1-Math.cos(theta));
+//		return L*(1-Math.cos(theta));;
+		return -L*Math.cos(theta);
 //		return 0;
 	}
 
