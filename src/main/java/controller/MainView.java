@@ -44,6 +44,15 @@ public class MainView {
     
     @FXML
     private TextField txtVelocity;
+    
+    @FXML
+    private TextField txtMass2;
+
+    @FXML
+    private TextField txtLength2;
+
+    @FXML
+    private TextField txtAngle2;
 
     @FXML
     private Button btnStart;
@@ -71,9 +80,12 @@ public class MainView {
     
     private void defaultParameters() {
 		txtMass.setText("1");
+		txtMass2.setText("2");
 		txtGravity.setText("9.81");
 		txtLength.setText("1");
-		txtAngle.setText("30");
+		txtLength2.setText("2");
+		txtAngle.setText("60");
+		txtAngle2.setText("-30");
 		txtFriction.setText("0.1");
 		txtVelocity.setText("0");
 	}
@@ -129,7 +141,7 @@ public class MainView {
     	
     	
     	gc.fillOval(x1, y1+height*3/4, PEND_W, PEND_H);
-    	
+    	gc.setFill(Color.BLUE);
     	gc.fillOval(x2, y2+height*3/4, PEND_W, PEND_H);
     	
     }
@@ -143,14 +155,17 @@ public class MainView {
 //		double height = canvas.getHeight()/2;
 		try {
 			double angle = Double.parseDouble(txtAngle.getText());
+			double angle2 = Double.parseDouble(txtAngle2.getText());
 			double length = Double.parseDouble(txtLength.getText());
+			double length2 = Double.parseDouble(txtLength2.getText());
 			double mass = Double.parseDouble(txtMass.getText());
+			double mass2 = Double.parseDouble(txtMass2.getText());
 			double gravity = Double.parseDouble(txtGravity.getText());
 			double friction = Double.parseDouble(txtFriction.getText());
 			double velocity = Double.parseDouble(txtVelocity.getText());
 			
 			doublePendulum = new DoublePendulum(angle, velocity, length, mass, 
-					angle, velocity, length, mass, 
+					angle2, velocity, length2, mass2, 
 					gravity, friction);
 		} catch (NumberFormatException e) {
 			Alert alert = new Alert(AlertType.ERROR);

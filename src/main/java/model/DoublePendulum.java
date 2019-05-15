@@ -1,7 +1,7 @@
 package model;
 
 public class DoublePendulum {
-	
+
 	private double theta1;
 	private double dTheta1;
 	/**
@@ -12,7 +12,7 @@ public class DoublePendulum {
 	 * Mass 1
 	 */
 	private double m1;
-	
+
 	private double theta2;
 	private double dTheta2;
 	/**
@@ -23,7 +23,7 @@ public class DoublePendulum {
 	 * Mass
 	 */
 	private double m2;
-	
+
 	/**
 	 * Gravity
 	 */
@@ -31,8 +31,8 @@ public class DoublePendulum {
 	/**
 	 * Friction
 	 */
-	private double k;	
-	
+	private double k;
+
 	public DoublePendulum(double theta1, double dTheta1, double l1, double m1, double theta2, double dTheta2, double l2,
 			double m2, double g, double k) {
 		super();
@@ -46,7 +46,7 @@ public class DoublePendulum {
 		this.m2 = m2;
 		this.g = g;
 		this.k = k;
-	}	
+	}
 
 	public double getTheta1() {
 		return theta1;
@@ -129,32 +129,39 @@ public class DoublePendulum {
 	}
 
 	public void step(double dt) {
-		theta1 += dTheta1*dt;
-		dTheta1 += (-(g/L1)*Math.sin(theta1)-k*dTheta1)*dt;
-		theta2 += dTheta2*dt;
-		dTheta2 += (-(g/L2)*Math.sin(theta2)-k*dTheta2)*dt;
+		theta1 += dTheta1 * dt;
+		// dTheta1 += (-(g/L1)*Math.sin(theta1)-k*dTheta1)*dt;
+		dTheta1 += (Math.cos(theta1-theta2)*(g*Math.sin(theta2)/L1-(dTheta1*dTheta1)*Math.sin(theta1-theta2))-
+				(L2*(((m1/m2)+1)*g*Math.sin(theta1)/L2+(dTheta2*dTheta2)*Math.sin(theta1-theta2))/L1))
+				/((m1/m2)+Math.sin(theta1-theta2)*Math.sin(theta1-theta2)) * dt;
+		theta2 += dTheta2 * dt;
+//		dTheta2 += (-(g / L2) * Math.sin(theta2) - k * dTheta2) * dt;
+		dTheta2 += ((Math.cos(theta1-theta2)*(((m1/m2)+1)*g*Math.sin(theta1)/L2+(dTheta2*dTheta2)*Math.sin(theta1-theta2))
+				-(((m1/m2)+1)*L1*(g*Math.sin(theta2)
+						/L1-(dTheta1*dTheta1)*Math.sin(theta1-theta2))/L2))/((m1/m2)+Math.sin(theta1-theta2)*Math.sin(theta1-theta2)))
+				* dt;
 
 	}
-	
+
 	public double getX1() {
-		return L1*Math.sin(theta1); 
+		return L1 * Math.sin(theta1);
 	}
-	
+
 	public double getY1() {
 //		return L*(1-Math.cos(theta));;
-		return -L1*Math.cos(theta1);
+		return -L1 * Math.cos(theta1);
 //		return 0;
 	}
 
 	public double getX2() {
-		return getX1()+L2*Math.sin(theta2); 
+		return getX1() + L2 * Math.sin(theta2);
 //		return getX1(); 
 	}
-	
+
 	public double getY2() {
-		return getY1()-L2*Math.cos(theta2);
+		return getY1() - L2 * Math.cos(theta2);
 //		return getY1()-L2;
 //		return 0;
 	}
-	
+
 }

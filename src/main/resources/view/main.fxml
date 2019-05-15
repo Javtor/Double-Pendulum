@@ -23,36 +23,45 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Mass (kg)" />
-            <Label text="Gravity (m/s^2)" GridPane.rowIndex="1" />
-            <Label text="Length (m)" GridPane.rowIndex="2" />
+            <Label text="Mass 1 (kg)" />
+            <Label text="Gravity (m/s^2)" GridPane.rowIndex="2" />
+            <Label text="Length 1 (m)" GridPane.rowIndex="3" />
             <TextField fx:id="txtMass" GridPane.columnIndex="1" />
-            <TextField fx:id="txtGravity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtLength" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtAngle" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Angle (°)" GridPane.rowIndex="3" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+            <TextField fx:id="txtGravity" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtLength" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtAngle" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Angle 1 (°)" GridPane.rowIndex="5" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
                <children>
                   <Button fx:id="btnStart" mnemonicParsing="false" onAction="#start" text="Start" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <children>
                   <Button fx:id="btnStop" mnemonicParsing="false" onAction="#stop" text="Stop" />
                </children>
             </HBox>
-            <Label text="Friction" GridPane.rowIndex="4" />
-            <TextField fx:id="txtFriction" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="txtVelocity" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="Velocity (°/s)" GridPane.rowIndex="5" />
+            <Label text="Friction" GridPane.rowIndex="7" />
+            <TextField fx:id="txtFriction" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="txtVelocity" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Velocity (°/s)" GridPane.rowIndex="8" />
+            <Label text="Mass 2 (kg)" GridPane.rowIndex="1" />
+            <TextField fx:id="txtMass2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtLength2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtAngle2" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Length 2 (m)" GridPane.rowIndex="4" />
+            <Label text="Angle 2 (°)" GridPane.rowIndex="6" />
          </children>
          <opaqueInsets>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
