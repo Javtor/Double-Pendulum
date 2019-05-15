@@ -133,13 +133,13 @@ public class DoublePendulum {
 		// dTheta1 += (-(g/L1)*Math.sin(theta1)-k*dTheta1)*dt;
 		dTheta1 += (Math.cos(theta1-theta2)*(g*Math.sin(theta2)/L1-(dTheta1*dTheta1)*Math.sin(theta1-theta2))-
 				(L2*(((m1/m2)+1)*g*Math.sin(theta1)/L2+(dTheta2*dTheta2)*Math.sin(theta1-theta2))/L1))
-				/((m1/m2)+Math.sin(theta1-theta2)*Math.sin(theta1-theta2)) * dt;
+				/((m1/m2)+Math.sin(theta1-theta2)*Math.sin(theta1-theta2)) * dt  - k * dTheta1 * dt;
 		theta2 += dTheta2 * dt;
 //		dTheta2 += (-(g / L2) * Math.sin(theta2) - k * dTheta2) * dt;
 		dTheta2 += ((Math.cos(theta1-theta2)*(((m1/m2)+1)*g*Math.sin(theta1)/L2+(dTheta2*dTheta2)*Math.sin(theta1-theta2))
 				-(((m1/m2)+1)*L1*(g*Math.sin(theta2)
 						/L1-(dTheta1*dTheta1)*Math.sin(theta1-theta2))/L2))/((m1/m2)+Math.sin(theta1-theta2)*Math.sin(theta1-theta2)))
-				* dt;
+				* dt - k * dTheta2 * dt;
 
 	}
 
