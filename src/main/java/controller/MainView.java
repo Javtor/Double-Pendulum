@@ -1,7 +1,7 @@
 package controller;
 
 import javafx.scene.paint.Color;
-import model.Pendulum;
+import model.DoublePendulum;
 import threads.TimeThread;
 
 import java.awt.GraphicsConfigTemplate;
@@ -21,7 +21,7 @@ public class MainView {
 	
 	public static final double PIXEL_SIZE = 20;
 
-	private Pendulum pendulum;
+	private DoublePendulum doublePendulum;
 	private TimeThread timeThread;
 
     @FXML
@@ -64,7 +64,7 @@ public class MainView {
     void initialize() {
     	defaultParameters();
     	initPendulum();
-    	drawPend(0, 0);    	
+    	drawPend();    	
     	timeThread = new TimeThread(this);
     	
     }
@@ -79,8 +79,8 @@ public class MainView {
 	}
 
 	public void drawPend() {
-    	double x = pendulum.getX();
-    	double y = -pendulum.getY();
+    	double x = doublePendulum.getX();
+    	double y = -doublePendulum.getY();
     	drawPend(x, y);
     }
     
@@ -96,8 +96,8 @@ public class MainView {
     	double width = canvas.getWidth()/2;
     	double height = canvas.getHeight()/2;
     	
-    	rawX *= height/pendulum.getL();
-    	rawY *= height/pendulum.getL();
+    	rawX *= height/doublePendulum.getL();
+    	rawY *= height/doublePendulum.getL();
     	
     	rawX += width;
 //    	rawY += height;
@@ -138,7 +138,7 @@ public class MainView {
 			double friction = Double.parseDouble(txtFriction.getText());
 			double velocity = Double.parseDouble(txtVelocity.getText());
 			
-			pendulum = new Pendulum(angle, velocity, length, mass, gravity, friction);
+			doublePendulum = new DoublePendulum(angle, velocity, length, mass, gravity, friction);
 		} catch (NumberFormatException e) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");
@@ -150,7 +150,7 @@ public class MainView {
 	}
 
 	public void step(double deltaTime) {
-		pendulum.step(deltaTime);
+		doublePendulum.step(deltaTime);
 		
 	}
 

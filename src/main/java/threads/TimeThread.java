@@ -1,7 +1,7 @@
 package threads;
 
 import controller.MainView;
-import model.Pendulum;
+import model.DoublePendulum;
 
 public class TimeThread extends Thread {
 	
