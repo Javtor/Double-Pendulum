@@ -37,11 +37,11 @@ public class DoublePendulum {
 			double m2, double g, double k) {
 		super();
 		setTheta1(theta1);
-		this.dTheta1 = dTheta1;
+		setdTheta1(dTheta1);
 		L1 = l1;
 		this.m1 = m1;
-		this.theta2 = theta2;
-		this.dTheta2 = dTheta2;
+		setTheta2(theta2);
+		setdTheta2(dTheta2);
 		L2 = l2;
 		this.m2 = m2;
 		this.g = g;
@@ -131,6 +131,8 @@ public class DoublePendulum {
 	public void step(double dt) {
 		theta1 += dTheta1*dt;
 		dTheta1 += (-(g/L1)*Math.sin(theta1)-k*dTheta1)*dt;
+		theta2 += dTheta2*dt;
+		dTheta2 += (-(g/L2)*Math.sin(theta2)-k*dTheta2)*dt;
 
 	}
 	
@@ -144,6 +146,15 @@ public class DoublePendulum {
 //		return 0;
 	}
 
-
+	public double getX2() {
+		return getX1()+L2*Math.sin(theta2); 
+//		return getX1(); 
+	}
+	
+	public double getY2() {
+		return getY1()-L2*Math.cos(theta2);
+//		return getY1()-L2;
+//		return 0;
+	}
 	
 }

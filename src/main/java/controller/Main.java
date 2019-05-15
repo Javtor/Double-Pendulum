@@ -17,7 +17,7 @@ public class Main extends Application{
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Pendulum");
+		primaryStage.setTitle("Double Pendulum");
 //		primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/img/icon-rubik.png")));
 		MainView contr = loader.getController();
 		primaryStage.show();
@@ -28,4 +28,9 @@ public class Main extends Application{
 		launch(args);
 	}
 
+	@Override
+	public void stop() throws Exception {
+	    super.stop(); //To change body of generated methods, choose Tools | Templates.
+	    System.exit(0);
+	}
 }
